@@ -5,6 +5,8 @@
 
 BEGIN;
 
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 CREATE TABLE IF NOT EXISTS user_profile (
     id                  UUID        NOT NULL DEFAULT uuid_generate_v4(),
     keycloak_subject    TEXT        NOT NULL,

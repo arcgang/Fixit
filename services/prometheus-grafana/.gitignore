@@ -1,0 +1,7 @@
+target/
+*.class
+
+# Never commit real secrets. `.env.example` is the checked-in template (see
+# `env-example-complete` in the orchestrator standards catalog).
+.env
+.env.local

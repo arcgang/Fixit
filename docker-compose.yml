@@ -1,0 +1,27 @@
+# Generated from the repository plan: local stand-ins for the platform components.
+name: local
+services:
+  postgres:
+    image: postgres:16
+    ports:
+      - ${POSTGRES_PORT:-5432}:5432
+    environment:
+      POSTGRES_PASSWORD: local
+      POSTGRES_DB: app
+    restart: unless-stopped
+  oidc:
+    image: ghcr.io/navikt/mock-oauth2-server:2.1.10
+    ports:
+      - ${OIDC_PORT:-8090}:8080
+    restart: unless-stopped
+  minio:
+    image: minio/minio
+    ports:
+      - ${MINIO_PORT:-9000}:9000
+    environment:
+      MINIO_ROOT_USER: local
+      MINIO_ROOT_PASSWORD: localpassword
+    command:
+      - server
+      - /data
+    restart: unless-stopped

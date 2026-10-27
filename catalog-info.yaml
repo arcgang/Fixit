@@ -1,0 +1,142 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fixit-react-spa
+  description: fixit-react-spa — React 18, TypeScript, Vite, AWS CloudFront, AWS S3
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/apps/fixit-react-spa
+    sdlc.io/lld-component: cmp:fixit-react-spa
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: website
+  lifecycle: experimental
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fixit-api-backend
+  description: fixit-api-backend — Java 21, Spring Boot 3.x, Spring Security,
+    Spring Data JPA, Hibernate, AWS EKS
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/services/fixit-api-backend
+    sdlc.io/lld-component: cmp:fixit-api-backend
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: service
+  lifecycle: experimental
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fixit-postgresql-db
+  description: fixit-postgresql-db — PostgreSQL 16, AWS RDS Multi-AZ, AWS KMS
+    encryption at rest
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/services/fixit-postgresql-db
+    sdlc.io/lld-component: cmp:fixit-postgresql-db
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: service
+  lifecycle: experimental
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: prometheus-grafana
+  description: prometheus-grafana — Prometheus, Grafana, Spring Boot Actuator, AWS
+    CloudWatch Alarms
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/services/prometheus-grafana
+    sdlc.io/lld-component: cmp:prometheus-grafana
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: service
+  lifecycle: experimental
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: aws-secrets-manager
+  description: aws-secrets-manager — AWS Secrets Manager, AWS KMS, VPC Endpoint
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/services/aws-secrets-manager
+    sdlc.io/lld-component: cmp:aws-secrets-manager
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: service
+  lifecycle: experimental
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: keycloak-idp
+  description: keycloak-idp — Keycloak 24.x, PostgreSQL (Keycloak DB), AWS EKS
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/platform/keycloak-idp
+    sdlc.io/lld-component: cmp:keycloak-idp
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: infrastructure
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aws-api-gateway
+  description: aws-api-gateway — AWS API Gateway HTTP API, JWT Authoriser, VPC Link
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/platform/aws-api-gateway
+    sdlc.io/lld-component: cmp:aws-api-gateway
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: infrastructure
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aws-alb
+  description: aws-alb — AWS Application Load Balancer, TLS 1.2+, ACM Certificate
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/platform/aws-alb
+    sdlc.io/lld-component: cmp:aws-alb
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: infrastructure
+  owner: arcgang
+  system: fixit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: aws-cloudwatch-logs
+  description: aws-cloudwatch-logs — AWS CloudWatch Logs, AWS S3 (archival), AWS KMS
+  annotations:
+    github.com/project-slug: arcgang/fixit
+    backstage.io/source-location: url:https://github.com/arcgang/fixit/tree/main/platform/aws-cloudwatch-logs
+    sdlc.io/lld-component: cmp:aws-cloudwatch-logs
+    sdlc.io/archos-generation: 53bc696c-0c40-4dc5-be1e-589d0637bd22
+spec:
+  type: infrastructure
+  owner: arcgang
+  system: fixit

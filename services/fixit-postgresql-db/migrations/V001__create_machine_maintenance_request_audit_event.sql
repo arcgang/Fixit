@@ -131,7 +131,6 @@ CREATE TABLE IF NOT EXISTS audit_event (
     outcome         TEXT        NOT NULL,
     payload_json    JSONB,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at      TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     CONSTRAINT pk_audit_event PRIMARY KEY (id)
     -- No FK on actor_user_id intentionally: audit must survive user pseudonymisation
 );

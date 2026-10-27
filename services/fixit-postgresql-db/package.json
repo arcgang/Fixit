@@ -1,0 +1,11 @@
+{
+  "name": "fixit-postgresql-db",
+  "version": "1.0.0",
+  "description": "Database migrations for the FixIt application",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
